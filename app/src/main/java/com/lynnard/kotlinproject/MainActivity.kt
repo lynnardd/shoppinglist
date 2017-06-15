@@ -24,6 +24,7 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         addItem = findViewById(R.id.btnAddItem) as FloatingActionButton
         shoppingRecycler = findViewById(R.id.recyclerView) as RecyclerView
