@@ -10,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper
 import android.text.InputType
 import android.util.Log
 import android.widget.*
+import com.lynnard.kotlinproject.adapter.KotlinRecyclerAdapter
 import com.lynnard.kotlinproject.adapter.RecyclerAdapter
 import com.lynnard.kotlinproject.dataClasses.ShoppingItem
 import com.lynnard.kotlinproject.helpers.DatabaseHandler
@@ -39,7 +40,7 @@ open class MainActivity : AppCompatActivity() {
         super.onStart()
 
         val handler: DatabaseHandler = DatabaseHandler(this@MainActivity)
-        val adapter = RecyclerAdapter(handler.allItems, this@MainActivity)
+        val adapter = KotlinRecyclerAdapter(handler.allItems as ArrayList<ShoppingItem>, this@MainActivity)
         val callback:ItemTouchHelper.Callback = SimpleItemTouchHelperCallback(adapter)
         touchHelper = ItemTouchHelper(callback)
         shoppingRecycler.adapter = adapter
@@ -70,7 +71,7 @@ open class MainActivity : AppCompatActivity() {
                     .setView(layout)
                     .setPositiveButton("Add", { _, _ ->
                         handler.addItem(ShoppingItem(itemInput.text.toString(), quantityInput.text.toString(), unit.selectedItem.toString()))
-                        (shoppingRecycler.adapter as RecyclerAdapter).add()
+                        (shoppingRecycler.adapter as KotlinRecyclerAdapter).add()
                         Log.d("added", itemInput.text.toString() + " " + quantityInput.text.toString() + " " + unit.selectedItem.toString())
                     })
                     .setNegativeButton("Cancel", { _, _ -> })
