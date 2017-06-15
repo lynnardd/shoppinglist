@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="pcs">pcs</string>
+    <string name="pc">pc</string>
+    <string name="item_name">Item Name</string>
+    <string name="quantity">Quantity</string>
+    <string name="add_item">Add Item</string>
+
+    <string-array name="labels">
+        <item>pc/s</item>
+        <item>mL</item>
+        <item>L</item>
+        <item>g</item>
+        <item>kg</item>
+    </string-array>
+</resources>
