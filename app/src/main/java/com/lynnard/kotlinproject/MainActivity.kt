@@ -1,5 +1,6 @@
 package com.lynnard.kotlinproject
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -9,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper
 import android.text.InputType
 import android.util.Log
 import android.widget.*
+import com.lynnard.kotlinproject.activities.ShoppingActivity
 import com.lynnard.kotlinproject.adapter.KotlinRecyclerAdapter
 import com.lynnard.kotlinproject.dataClasses.ShoppingItem
 import com.lynnard.kotlinproject.helpers.DatabaseHandler
@@ -16,7 +18,7 @@ import com.lynnard.kotlinproject.helpers.SimpleItemTouchHelperCallback
 
 open class MainActivity : AppCompatActivity() {
 
-    private lateinit var addItem: FloatingActionButton
+    /*private lateinit var addItem: FloatingActionButton
     private lateinit var shoppingRecycler: RecyclerView
     private lateinit var touchHelper: ItemTouchHelper
     //private val fragmentManager : android.support.v4.app.FragmentManager = supportFragmentManager
@@ -79,6 +81,17 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+    }*/
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val intent : Intent = Intent(this@MainActivity, ShoppingActivity::class.java)
+        startActivity(intent)
     }
 }
 
