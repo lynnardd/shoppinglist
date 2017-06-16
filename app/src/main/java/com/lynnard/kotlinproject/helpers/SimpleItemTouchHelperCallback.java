@@ -6,11 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.View;
-import android.widget.LinearLayout;
 
-import com.lynnard.kotlinproject.R;
-import com.lynnard.kotlinproject.adapter.RecyclerAdapter;
+import com.lynnard.kotlinproject.adapter.KotlinRecyclerAdapter;
 import com.lynnard.kotlinproject.interfaces.ItemTouchHelperAdapter;
 import com.lynnard.kotlinproject.interfaces.ItemTouchViewHolder;
 
@@ -52,7 +49,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
         // Notify the adapter of the dismissal
-        mAdapter.onItemDismiss((RecyclerAdapter.ViewHolder) viewHolder, viewHolder.getAdapterPosition());
+        mAdapter.onItemDismiss((KotlinRecyclerAdapter.ViewHolder) viewHolder, viewHolder.getAdapterPosition());
     }
 
     @Override

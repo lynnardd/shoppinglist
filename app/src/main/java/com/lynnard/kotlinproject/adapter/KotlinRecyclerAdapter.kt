@@ -16,7 +16,7 @@ import com.lynnard.kotlinproject.interfaces.ItemTouchHelperAdapter
  * Created by gerard on 6/15/2017.
  */
 
-class KotlinRecyclerAdapter(private var items: ArrayList<ShoppingItem>, private val context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(), ItemTouchHelperAdapter {
+class KotlinRecyclerAdapter(private var items: ArrayList<ShoppingItem>, private val context: Context) : RecyclerView.Adapter<KotlinRecyclerAdapter.ViewHolder>(), ItemTouchHelperAdapter {
 
     class ViewHolder internal constructor(v: View) : RecyclerView.ViewHolder(v) {
         internal var tvItemName: TextView = v.findViewById(R.id.tvItemName) as TextView
@@ -29,11 +29,11 @@ class KotlinRecyclerAdapter(private var items: ArrayList<ShoppingItem>, private 
      * RecyclerView Adapter Functions
      *
      * */
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerAdapter.ViewHolder =
-            RecyclerAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.card, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): KotlinRecyclerAdapter.ViewHolder =
+            KotlinRecyclerAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.card, parent, false))
 
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: KotlinRecyclerAdapter.ViewHolder?, position: Int) {
         holder!!.tvItemName.text = items[position].name
         holder.tvItemQuantity.text = items[position].quantity
         holder.tvLabel.text = items[position].label
@@ -48,7 +48,7 @@ class KotlinRecyclerAdapter(private var items: ArrayList<ShoppingItem>, private 
      * Item Touch Helper Adapter Functions
      *
      * */
-    override fun onItemDismiss(viewHolder: RecyclerAdapter.ViewHolder?, position: Int) = delete(position)
+    override fun onItemDismiss(viewHolder: KotlinRecyclerAdapter.ViewHolder?, position: Int) = delete(position)
 
     override fun onItemMove(fromPosition: Int, toPosition: Int): Boolean = false
 

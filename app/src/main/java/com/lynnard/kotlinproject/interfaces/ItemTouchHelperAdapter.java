@@ -1,6 +1,6 @@
 package com.lynnard.kotlinproject.interfaces;
 
-import com.lynnard.kotlinproject.adapter.RecyclerAdapter;
+import com.lynnard.kotlinproject.adapter.KotlinRecyclerAdapter;
 
 /**
  * Created by gerard on 6/6/2017.
@@ -9,5 +9,5 @@ import com.lynnard.kotlinproject.adapter.RecyclerAdapter;
 public interface ItemTouchHelperAdapter {
 
     boolean onItemMove(int fromPosition, int toPosition);
-    void onItemDismiss(RecyclerAdapter.ViewHolder viewHolder, int position);
+    void onItemDismiss(KotlinRecyclerAdapter.ViewHolder viewHolder, int position);
 }

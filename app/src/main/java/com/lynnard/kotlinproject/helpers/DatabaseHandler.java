@@ -75,8 +75,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public List<ShoppingItem> getAllItems() {
-        List<ShoppingItem> contactList = new ArrayList<>();
+    public ArrayList<ShoppingItem> getAllItems() {
+        ArrayList<ShoppingItem> contactList = new ArrayList<>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_ITEMS;
 

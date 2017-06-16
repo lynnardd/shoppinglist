@@ -1,6 +1,5 @@
 package com.lynnard.kotlinproject
 
-import android.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -11,7 +10,6 @@ import android.text.InputType
 import android.util.Log
 import android.widget.*
 import com.lynnard.kotlinproject.adapter.KotlinRecyclerAdapter
-import com.lynnard.kotlinproject.adapter.RecyclerAdapter
 import com.lynnard.kotlinproject.dataClasses.ShoppingItem
 import com.lynnard.kotlinproject.helpers.DatabaseHandler
 import com.lynnard.kotlinproject.helpers.SimpleItemTouchHelperCallback
